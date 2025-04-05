@@ -12,4 +12,9 @@ fn main() {
             process::exit(1);
         });
 
+    // exception handling for file not found
+    if let Err(error) = bootleg_grep::run(config) {
+        println!("Error: {error}");
+        process::exit(1);
+    }
 }
