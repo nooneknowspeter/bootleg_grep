@@ -108,4 +108,15 @@ mod test {
         );
     }
 
+    #[test]
+    fn test_case_insensitive() {
+        let query = "rAinBow";
+        let contents = "Under the rainbow";
+
+        assert_eq!(
+            vec!["Under the rainbow"],
+            search_insensitive(&query, &contents),
+            "Checking if query -> \"{query}\" was found in contents -> \"{contents}\""
+        );
+    }
 }
