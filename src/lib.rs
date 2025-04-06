@@ -45,7 +45,7 @@ impl Config {
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     // read contents for file
     let contents = fs::read_to_string(config.file_path).unwrap_or_else(|error| {
-        println!("Error parsing file: {error}");
+        println!("{}", error.to_string().bold().red());
         process::exit(1);
     });
 
