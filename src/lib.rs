@@ -49,7 +49,17 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
         process::exit(1);
     });
 
-    println!("{contents}");
+    if !config.is_sensitive {
+        // insensitive searching
+        for line in search_insensitive(&config.query, &contents) {
+            println!("{line}");
+        }
+    } else {
+        // sensitive searching
+        for line in search(&config.query, &contents) {
+            println!("{line}");
+        }
+    }
 
     Ok(())
 }
