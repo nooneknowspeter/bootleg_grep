@@ -1,6 +1,6 @@
 # Bootleg Grep
 
-Created a single threaded, single file mini version of [ripgrep](https://github.com/BurntSushi/ripgrep)
+Created a single threaded, single file, mini version of [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 ## Help
 
