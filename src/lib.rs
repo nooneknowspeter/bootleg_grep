@@ -5,6 +5,7 @@ use std::{fs, process};
 pub struct Config {
     query: String,
     file_path: String,
+    is_sensitive: bool,
 }
 
 impl Config {
