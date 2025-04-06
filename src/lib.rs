@@ -19,7 +19,7 @@ impl Config {
             println!("{}", "- [optional]:");
             println!("{}", "    -i -> insensitive search");
 
-            return Err("Insufficient arguments");
+            return Err("");
         }
 
         let query_arg: String = args[1].clone();
