@@ -1,4 +1,5 @@
 use bg;
+use colored::Colorize;
 use std::env;
 use std::process;
 
@@ -7,6 +8,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     let config: bg::Config = bg::Config::configure(&args).unwrap_or_else(|error| {
+        println!("{}", error.to_string().bold().red());
         process::exit(1);
     });
 
