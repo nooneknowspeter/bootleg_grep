@@ -1,4 +1,4 @@
-use bootleg_grep;
+use bg;
 use std::env;
 use std::process;
 
@@ -6,15 +6,13 @@ fn main() {
     // handle input arguments from cli
     let args: Vec<String> = env::args().collect();
 
-    let config: bootleg_grep::Config =
-        bootleg_grep::Config::configure(&args).unwrap_or_else(|error| {
-            println!("Error: {error}");
-            process::exit(1);
-        });
+    let config: bg::Config = bg::Config::configure(&args).unwrap_or_else(|error| {
+        process::exit(1);
+    });
 
     // exception handling for file not found
-    if let Err(error) = bootleg_grep::run(config) {
-        println!("Error: {error}");
+    if let Err(error) = bg::run(config) {
+        println!("{}", error.to_string().bold().red());
         process::exit(1);
     }
 }
