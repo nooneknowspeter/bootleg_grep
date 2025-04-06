@@ -24,10 +24,19 @@ impl Config {
 
         let query_arg: String = args[1].clone();
         let file_path_arg: String = args[2].clone();
+        let is_sensitive_arg: bool = if args.len() > 3 {
+            if args[3] != "-i" {
+                return Err("Invalid flag");
+            }
+            false
+        } else {
+            true
+        };
 
         Ok(Config {
             query: query_arg,
             file_path: file_path_arg,
+            is_sensitive: is_sensitive_arg,
         })
     }
 }
