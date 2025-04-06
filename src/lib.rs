@@ -6,6 +6,9 @@ pub struct Config {
 impl Config {
     // configure structure properties to use in other functions
     pub fn configure(args: &[String]) -> Result<Config, &str> {
+        if args.len() < 3 {
+            return Err("Insufficient arguments");
+        }
 
         let query_arg: String = args[1].clone();
         let file_path_arg: String = args[2].clone();
