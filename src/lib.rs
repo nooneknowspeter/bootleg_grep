@@ -1,3 +1,4 @@
+use colored::Colorize;
 use std::error::Error;
 use std::{fs, process};
 
@@ -10,6 +11,13 @@ impl Config {
     // configure structure properties to use in other functions
     pub fn configure(args: &[String]) -> Result<Config, &str> {
         if args.len() < 3 {
+            println!("\n{}\n", "bg <query> <file> [optional]".bold());
+            println!("{}\n", "- bg: executable");
+            println!("{}\n", "- <query>: query (no quotation marks)");
+            println!("{}\n", "- <file>: ./path/to/file");
+            println!("{}", "- [optional]:");
+            println!("{}", "    -i -> insensitive search");
+
             return Err("Insufficient arguments");
         }
 
