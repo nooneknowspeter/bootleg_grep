@@ -92,3 +92,8 @@ fn search_insensitive<'a>(query: &str, content: &'a str) -> Vec<&'a str> {
     result
 }
 
+#[cfg(test)]
+mod test {
+    use super::*;
+
+}
