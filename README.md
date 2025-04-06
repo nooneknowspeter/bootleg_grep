@@ -6,7 +6,8 @@ Created a single threaded, single file, mini version of [ripgrep](https://github
 
 `bg` will show this message
 
-`bg <query> <file> [optional]`
+```sh
+bg <query> <file> [optional]
 
 - bg: executable
 
@@ -16,3 +17,4 @@ Created a single threaded, single file, mini version of [ripgrep](https://github
 
 - [optional]:
   -i - insensitive search
+```
