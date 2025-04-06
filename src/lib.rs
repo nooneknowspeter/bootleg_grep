@@ -96,4 +96,16 @@ fn search_insensitive<'a>(query: &str, content: &'a str) -> Vec<&'a str> {
 mod test {
     use super::*;
 
+    #[test]
+    fn test_case_sensitive() {
+        let query = "rainbow";
+        let contents = "Under the rainbow";
+
+        assert_eq!(
+            vec!["Under the rainbow"],
+            search(&query, &contents),
+            "Checking if query -> \"{query}\" was found in contents -> \"{contents}\""
+        );
+    }
+
 }
