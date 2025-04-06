@@ -25,6 +25,12 @@ impl Config {
 
 // use config struct contents to read contents of file
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
+    // use query property in structure for now to prevent errors
+    println!(
+        "query -> {}, file path -> {}",
+        config.query, config.file_path
+    );
+
     // read contents for file
     let contents = fs::read_to_string(config.file_path).unwrap_or_else(|error| {
         println!("Error parsing file: {error}");
